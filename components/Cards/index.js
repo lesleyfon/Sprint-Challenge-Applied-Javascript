@@ -44,17 +44,20 @@ axios.get(cardsUrl)
         //headline;
         const headline = document.createElement('div');
         headline.classList.add('headline');
+        headline.textContent = params.headline;
         card.appendChild(headline); 
         const author = document.createElement('div');
         author.classList.add('author');
         card.appendChild(author); 
+
         const imgContainer = document.createElement('div');
         imgContainer.classList.add('img-container');
         author.appendChild(imgContainer);
         const img = document.createElement('img');
-        img.src = '#'
+        img.src = params.authorPhoto;
         imgContainer.appendChild(img);
         const spanName  = document.createElement('span');
-        spanName.textContent ='By '
+        spanName.textContent ='By ' + params.authorName;
         author.appendChild(spanName)
+        console.log(card)
     }
