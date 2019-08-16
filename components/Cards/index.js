@@ -17,3 +17,12 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+const cardsUrl = 'https://lambda-times-backend.herokuapp.com/articles'
+axios.get(cardsUrl)
+    .then(Response=>{
+        console.log(Response);
+    })
+    .catch(Err=>{
+        console.error('There was an error with the axios get call');
+        console.error("Error: ", Err );
+    })

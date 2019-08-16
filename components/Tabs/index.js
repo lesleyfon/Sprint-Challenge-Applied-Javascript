@@ -21,6 +21,6 @@ axios.get(url)
         })
     })
     .catch(err=>{
-        console.error('There was an error with the axios get call')
-        console.error("Error: ", err )
+        console.error('There was an error with the axios get call');
+        console.error("Error: ", err );
     });
