@@ -10,6 +10,7 @@
 const url = 'https://lambda-times-backend.herokuapp.com/topics'
 axios.get(url)
 .then(response=>{
+    // storing response data to a variable 
     let responseData = response.data.topics;
     const tabBar = document.querySelector('.topics')
         responseData.forEach(topic=>{
