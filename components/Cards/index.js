@@ -57,7 +57,7 @@ axios.get(cardsUrl)
                         arrayLoop(node)
                         break;
                     case (element.textContent === 'all'):
-                        console.log(all)
+                        arrayLoop(all)
                         break;
                     default:
                         console.log('Sorry,'); 
