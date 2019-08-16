@@ -25,4 +25,26 @@ axios.get(cardsUrl)
     .catch(Err=>{
         console.error('There was an error with the axios get call');
         console.error("Error: ", Err );
-    })
+    });
+
+
+    function CardComponent(params) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        //headline;
+        const headline = document.createElement('div');
+        headline.classList.add('headline');
+        card.appendChild(headline); 
+        const author = document.createElement('div');
+        author.classList.add('author');
+        card.appendChild(author); 
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('img-container');
+        author.appendChild(imgContainer);
+        const img = document.createElement('img');
+        img.src = '#'
+        imgContainer.appendChild(img);
+        const spanName  = document.createElement('span');
+        spanName.textContent ='By '
+        author.appendChild(spanName)
+    }
