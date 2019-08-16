@@ -46,18 +46,19 @@ axios.get(cardsUrl)
         headline.classList.add('headline');
         headline.textContent = params.headline;
         card.appendChild(headline); 
+        //author div
         const author = document.createElement('div');
         author.classList.add('author');
         card.appendChild(author); 
-
+        //image container 
         const imgContainer = document.createElement('div');
         imgContainer.classList.add('img-container');
         author.appendChild(imgContainer);
         const img = document.createElement('img');
         img.src = params.authorPhoto;
         imgContainer.appendChild(img);
+        //author name
         const spanName  = document.createElement('span');
         spanName.textContent ='By ' + params.authorName;
         author.appendChild(spanName)
-        console.log(card)
     }
