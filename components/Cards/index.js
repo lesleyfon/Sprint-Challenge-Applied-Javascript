@@ -25,19 +25,46 @@ axios.get(cardsUrl)
         const technology = Response.data.articles.technology;
         const jquery = Response.data.articles.jquery;
         const node = Response.data.articles.node;
+        const  allTabs = document.querySelectorAll('.tab');
+        const arr = Array.from(allTabs);
         const arrayLoop = (arr)=>{
             arr.forEach(element => {
                 CardComponent(element)
             });
         }
-        arrayLoop(technology)
+        arr.forEach(element=>{
+            // console.log(element)
+            element.addEventListener('click', e=>{
+                e.preventDefault();
+                switch(true){
+                    case (element.textContent === 'javascript'):
+                    arrayLoop(js)
+                    break;
+                    case (element.textContent === 'bootstrap'):
+                        arrayLoop(bootstrap)
+                        break;
+                    case (element.textContent === 'technology'):
+                        console.log('technology')
+                        arrayLoop(technology)
+                        break;
+                    case (element.textContent === 'jquery'):
+                        arrayLoop(jquery)
+                        break;
+                    case (element.textContent === 'node.js'):
+                        arrayLoop(node)
+                        break;
+                    default:
+                        console.log('Sorry,'); 
+                }
+            })
+        })
     })
     .catch(Err=>{
         console.error('There was an error with the axios get call');
         console.error("Error: ", Err );
     });
 
-
+    const cardContainer = document.querySelector('.cards-container')
     function CardComponent(params) {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -60,5 +87,6 @@ axios.get(cardsUrl)
         //author name
         const spanName  = document.createElement('span');
         spanName.textContent ='By ' + params.authorName;
-        author.appendChild(spanName)
+        author.appendChild(spanName);
+        cardContainer.appendChild(card)
     }
