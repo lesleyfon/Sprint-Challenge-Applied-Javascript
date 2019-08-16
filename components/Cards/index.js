@@ -20,7 +20,17 @@
 const cardsUrl = 'https://lambda-times-backend.herokuapp.com/articles'
 axios.get(cardsUrl)
     .then(Response=>{
-        console.log(Response);
+        const js = Response.data.articles.javascript;
+        const bootstrap = Response.data.articles.bootstrap;
+        const technology = Response.data.articles.technology;
+        const jquery = Response.data.articles.jquery;
+        const node = Response.data.articles.node;
+        const arrayLoop = (arr)=>{
+            arr.forEach(element => {
+                CardComponent(element)
+            });
+        }
+        arrayLoop(technology)
     })
     .catch(Err=>{
         console.error('There was an error with the axios get call');
