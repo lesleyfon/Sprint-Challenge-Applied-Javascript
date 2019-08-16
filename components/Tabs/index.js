@@ -13,6 +13,7 @@ axios.get(url)
     // storing response data to a variable 
     let responseData = response.data.topics;
     const tabBar = document.querySelector('.topics')
+    responseData.unshift('all')
         responseData.forEach(topic=>{
             const tab = document.createElement('div');
             tab.classList.add('tab');

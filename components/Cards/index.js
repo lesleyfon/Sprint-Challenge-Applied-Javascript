@@ -27,6 +27,7 @@ axios.get(cardsUrl)
         const node = Response.data.articles.node;
         const  allTabs = document.querySelectorAll('.tab');
         const arr = Array.from(allTabs);
+        const all = [...js, ...bootstrap, ...technology, ...jquery, ...node];
         const arrayLoop = (arr)=>{
             arr.forEach(element => {
                 CardComponent(element)
@@ -54,6 +55,9 @@ axios.get(cardsUrl)
                         break;
                     case (element.textContent === 'node.js'):
                         arrayLoop(node)
+                        break;
+                    case (element.textContent === 'all'):
+                        console.log(all)
                         break;
                     default:
                         console.log('Sorry,'); 
