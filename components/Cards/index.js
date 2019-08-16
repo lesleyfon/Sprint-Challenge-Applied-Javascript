@@ -33,8 +33,10 @@ axios.get(cardsUrl)
             });
         }
         arr.forEach(element=>{
-            // console.log(element)
             element.addEventListener('click', e=>{
+                const cardContainer = document.querySelector('.cards-container')
+                cardContainer.innerHTML = ''
+                console.log(cardContainer)
                 e.preventDefault();
                 switch(true){
                     case (element.textContent === 'javascript'):
