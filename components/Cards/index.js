@@ -35,7 +35,7 @@ axios.get(cardsUrl)
         arr.forEach(element=>{
             element.addEventListener('click', e=>{
                 const cardContainer = document.querySelector('.cards-container')
-                cardContainer.innerHTML = ''
+                cardContainer.innerHTML = '';
                 console.log(cardContainer)
                 e.preventDefault();
                 switch(true){
