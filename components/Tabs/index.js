@@ -7,3 +7,21 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+const url = 'https://lambda-times-backend.herokuapp.com/topics'
+axios.get(url)
+.then(response=>{
+    // storing response data to a variable 
+    let responseData = response.data.topics;
+    const tabBar = document.querySelector('.topics')
+    responseData.unshift('all')
+        responseData.forEach(topic=>{
+            const tab = document.createElement('div');
+            tab.classList.add('tab');
+            tab.textContent = topic;
+            tabBar.appendChild(tab)
+        })
+    })
+    .catch(err=>{
+        console.error('There was an error with the axios get call');
+        console.error("Error: ", err );
+    });
